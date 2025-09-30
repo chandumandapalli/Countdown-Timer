@@ -1,0 +1,129 @@
+/* COUNTDOWN TIMER STYLES */
+/* This CSS file styles our countdown timer to look clean and modern */
+
+/* ========== GLOBAL RESET ========== */
+/* Remove default margins and padding from all elements for consistent styling */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* ========== BODY LAYOUT ========== */
+/* Set up the main page layout - center everything and make it look nice */
+body {
+  height: 85vh; /* Take up 85% of the screen height */
+  display: flex; /* Use flexbox for easy centering */
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Center items vertically */
+  align-items: center; /* Center items horizontally */
+  gap: 20px; /* Add some space between elements */
+  font-family: sans-serif; /* Use a clean, simple font */
+}
+
+/* ========== TITLE STYLING ========== */
+/* Style the main "Countdown Timer" heading */
+.container__title {
+  padding: 10px 20px; /* Add space inside the title */
+  font-size: 40px; /* Make the title nice and big */
+  text-align: center; /* Center the text */
+}
+
+/* ========== MAIN CONTAINER ========== */
+/* The box that holds all our timer elements */
+.container {
+  height: 200px; /* Fixed height for the container */
+  width: 500px; /* Fixed width for the container */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack everything vertically */
+  gap: 10px; /* Small space between each section */
+}
+
+/* ========== FLEXIBLE SECTIONS ========== */
+/* Make the labels, inputs, and buttons all line up horizontally */
+.container__labels,
+.container__inputs,
+.container__btns {
+  display: flex; /* Arrange items in a row */
+  justify-content: space-between; /* Spread items out evenly */
+}
+
+/* Add extra space above the buttons */
+.container__btns {
+  margin-top: 20px;
+}
+
+/* ========== LABELS STYLING ========== */
+/* Style the "Hours", "Minutes", "Seconds" labels */
+.container__labels--label {
+  width: 20%; /* Each label takes 20% of the width */
+  text-align: center; /* Center the text */
+  font-size: 30px; /* Make labels big and readable */
+  padding: 5px 10px; /* Add some space around the text */
+}
+
+/* ========== INPUT FIELDS STYLING ========== */
+/* Style the number input boxes where users enter time */
+.container__inputs--time {
+  justify-self: center; /* Center horizontally within its space */
+  align-self: center; /* Center vertically within its space */
+  border: none; /* Remove the default border */
+  font-size: 50px; /* Make the numbers big and easy to read */
+  width: 90px; /* Fixed width for each input */
+  height: 50px; /* Fixed height for each input */
+}
+
+/* ========== COLON SEPARATORS ========== */
+/* Style the ":" characters between time inputs */
+.container__inputs--colon {
+  justify-self: center; /* Center horizontally */
+  align-self: center; /* Center vertically */
+  font-size: 30px; /* Make colons visible but not too big */
+  margin: 0; /* No extra margin */
+  padding: 5px 10px; /* Small padding for spacing */
+}
+
+/* ========== BUTTON STYLING ========== */
+/* Basic style for all buttons */
+.btn {
+  width: 48%; /* Each button takes almost half the width (leaving small gap) */
+  height: 50px; /* Fixed height for all buttons */
+  font-size: 30px; /* Large text for easy reading */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Slightly rounded corners */
+  cursor: pointer; /* Show hand cursor when hovering */
+  color: white; /* White text on colored backgrounds */
+}
+
+/* ========== INPUT FIELD TWEAKS ========== */
+/* Make sure text is centered in input fields and remove blue outline */
+input {
+  text-align: center; /* Center the numbers users type */
+  outline: none; /* Remove the blue outline when focused */
+}
+
+/* ========== BUTTON COLORS ========== */
+/* Different colors for different button functions */
+
+/* Start button - green means "go" */
+.start {
+  background-color: green;
+}
+
+/* Stop/Pause button - orange means "wait" (hidden by default) */
+.stop {
+  display: none; /* Hidden until timer is running */
+  background-color: orange;
+}
+
+/* Reset button - red/orange means "stop completely" */
+.reset {
+  background-color: orangered;
+}
+
+/* ========== BROWSER-SPECIFIC FIXES ========== */
+/* Remove the up/down arrows from number inputs in Chrome/Safari */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none; /* Hide the arrows */
+  margin: 0; /* Remove any extra space */
+}

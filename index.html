@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Setting up the basic page information -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    
+    <!-- Linking our CSS file for styling -->
+    <link rel="stylesheet" href="./src/style.css" />
+    
+    <!-- The title that appears in the browser tab -->
+    <title>Countdown Timer</title>
+  </head>
+  <body>
+    
+    <!-- MAIN CONTAINER: Holds everything for our countdown timer -->
+    <div class="container">
+      
+      <!-- TITLE: The main heading for our timer -->
+      <span class="container__title">Countdown Timer</span>
+
+      <!-- LABELS: Shows what each input field is for (Hours, Minutes, Seconds) -->
+      <div class="container__labels">
+        <p class="container__labels--label">Hours</p>
+        <p class="container__labels--label">Minutes</p>
+        <p class="container__labels--label">Seconds</p>
+      </div>
+
+      <!-- INPUT SECTION: Where users enter the time they want to count down from -->
+      <div class="container__inputs">
+        
+        <!-- HOURS INPUT: User enters hours here (max 2 digits) -->
+        <!-- Note: maxlength only works on input type="text", so we use JavaScript to limit length -->
+        <!-- The oninput event runs JavaScript every time user types something -->
+        <input
+          type="number"
+          maxlength="2"
+          oninput="this.value=this.value.slice(0,this.maxLength)"
+          placeholder="00"
+          class="container__inputs--time hour"
+        />
+        
+        <!-- COLON SEPARATOR: Visual separator between hours and minutes -->
+        <p class="container__inputs--colon">:</p>
+        
+        <!-- MINUTES INPUT: User enters minutes here (max 2 digits) -->
+        <input
+          type="number"
+          maxlength="2"
+          oninput="this.value=this.value.slice(0,this.maxLength)"
+          placeholder="00"
+          class="container__inputs--time minute"
+        />
+        
+        <!-- COLON SEPARATOR: Visual separator between minutes and seconds -->
+        <p class="container__inputs--colon">:</p>
+        
+        <!-- SECONDS INPUT: User enters seconds here (max 2 digits) -->
+        <input
+          type="number"
+          maxlength="2"
+          oninput="this.value=this.value.slice(0,this.maxLength)"
+          placeholder="00"
+          class="container__inputs--time sec"
+        />
+      </div>
+
+      <!-- BUTTONS SECTION: Controls for starting, pausing, and resetting the timer -->
+      <div class="container__btns">
+        
+        <!-- START BUTTON: Begins the countdown (changes to "Continue" when paused) -->
+        <button class="btn start">Start</button>
+        
+        <!-- PAUSE BUTTON: Pauses the countdown (hidden by default, shown when timer is running) -->
+        <button class="btn stop">Pause</button>
+        
+        <!-- RESET BUTTON: Clears all time and stops the countdown -->
+        <button class="btn reset">Reset</button>
+      </div>
+    </div>
+    
+    <!-- JAVASCRIPT: Loading our script that makes the timer actually work -->
+    <script src="./src/script.js"></script>
+  </body>
+</html>
